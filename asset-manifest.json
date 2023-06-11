@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/icsexam/static/css/main.073c9b0a.css",
+    "main.js": "/icsexam/static/js/main.08294ba7.js",
+    "static/js/787.b30cb4c6.chunk.js": "/icsexam/static/js/787.b30cb4c6.chunk.js",
+    "index.html": "/icsexam/index.html",
+    "main.073c9b0a.css.map": "/icsexam/static/css/main.073c9b0a.css.map",
+    "main.08294ba7.js.map": "/icsexam/static/js/main.08294ba7.js.map",
+    "787.b30cb4c6.chunk.js.map": "/icsexam/static/js/787.b30cb4c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.08294ba7.js"
+  ]
+}
