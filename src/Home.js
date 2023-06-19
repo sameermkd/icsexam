@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
-import {firestore} from './firebase'
+import {db} from './firebase'
 import { addDoc, collection } from 'firebase/firestore'
 function Home() {
     const nameRef = useRef()
     const examRef = useRef()
-    const ref = collection(firestore,"exam")
+    const ref = collection(db,"exam")
     const handleSave = async(e) => {
         e.preventDefault()
         let data = {
