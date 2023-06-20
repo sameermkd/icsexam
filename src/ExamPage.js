@@ -46,7 +46,7 @@ function ExamPage() {
               <TableCell>{ex.invoice}</TableCell>
               <TableCell>{ex.name}</TableCell>
               <TableCell>{ex.examname}</TableCell>
-              <TableCell> <a href='http://google.com'> <Button variant="contained" endIcon={<CreateIcon />}>
+              <TableCell> <a href={ex.exam}> <Button variant="contained" endIcon={<CreateIcon />}>
               Start
             </Button></a></TableCell>
               </TableRow>
