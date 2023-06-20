@@ -2,7 +2,7 @@ import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/m
 import CreateIcon from '@mui/icons-material/Create';
 import React, { useEffect, useState } from 'react'
 import {db} from './firebase'
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import {collection, getDocs } from 'firebase/firestore'
 function ExamList() {
     const [exams, setExams]=useState([])
     const userCollectionRef = collection(db, "exam")
@@ -17,6 +17,7 @@ function ExamList() {
         )))
         }
         getExams()
+        setExams('')
     },[])
   return (
     <div>
@@ -35,7 +36,7 @@ function ExamList() {
               <TableCell>{ex.invoice}</TableCell>
               <TableCell>{ex.name}</TableCell>
               <TableCell>{ex.examname}</TableCell>
-              <TableCell> <a href='http://google.com'> <Button variant="contained" endIcon={<CreateIcon />}>
+              <TableCell><Button></Button> <a href={ex.exam}> <Button variant="contained" endIcon={<CreateIcon />}>
               Start
             </Button></a></TableCell>
               </TableRow>
