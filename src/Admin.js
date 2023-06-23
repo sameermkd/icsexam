@@ -18,6 +18,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import {Route, Routes } from 'react-router-dom';
 import Exam from './Exam';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Table, TableBody, TableCell, TableHead, TableRow, TextField } from '@mui/material';
+import { DatePicker } from '@mui/x-date-pickers';
 
 const pages = ['Add Exam', 'Exam List', 'Admin Page'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -31,6 +32,7 @@ function ResponsiveAppBar() {
     const [invoice, setInvoice]=useState('')
     const [exam, setExam]=useState('')
     const [examname, setExamname]=useState('')
+    const [date, setDate]=useState('')
     const [exams, setExams]=useState([])
     const userCollectionRef = collection(db, "exam")
     useEffect(() => {
@@ -53,7 +55,8 @@ function ResponsiveAppBar() {
         examname:examname,
         phone:phone,
         invoice:invoice,
-        exam:exam
+        exam:exam,
+        date:date,
       }
       try{
           addDoc(ref,data)
@@ -271,6 +274,9 @@ function ResponsiveAppBar() {
         setExam                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               (e.target.value)
       }}
     />
+    <DatePicker label="Basic date picker" onChange={(e)=>{
+      setDate(e.target.value)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              (e.target.value)
+    }}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>

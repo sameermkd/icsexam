@@ -19,6 +19,7 @@ import Home from './Home';
 import Admin from './Admin';
 import ExamList from './ExamList';
 import ExamPage from './ExamPage';
+import Pdf from './Pdf';
 
 const pages = ['Add Exam', 'Exam List', 'Admin Page'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -164,7 +165,7 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
       </AppBar>
-      <ExamPage />
+      <ExamList />
       <Routes>
       <Route path="/admin" element={<Admin />} /> 
       </Routes>

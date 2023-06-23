@@ -3,8 +3,11 @@ import CreateIcon from '@mui/icons-material/Create';
 import React, { useEffect, useState } from 'react'
 import {db} from './firebase'
 import {collection, getDocs } from 'firebase/firestore'
+import Pdf from './Pdf';
 function ExamList() {
     const [exams, setExams]=useState([])
+    const [data, setData]=useState('')
+    const [isShown, setIsShown] = useState(false);
     const userCollectionRef = collection(db, "exam")
     useEffect(() => {
         const getExams = async () => {
@@ -17,8 +20,8 @@ function ExamList() {
         )))
         }
         getExams()
-        setExams('')
     },[])
+    console.log(data);
   return (
     <div>
     <Table>
@@ -36,15 +39,26 @@ function ExamList() {
               <TableCell>{ex.invoice}</TableCell>
               <TableCell>{ex.name}</TableCell>
               <TableCell>{ex.examname}</TableCell>
-              <TableCell><Button></Button> <a href={ex.exam}> <Button variant="contained" endIcon={<CreateIcon />}>
+              <TableCell><Button></Button>  <Button variant="contained" onClick={()=> 
+                {
+                setData(ex.invoice)
+                setIsShown(true);
+                }
+              } endIcon={<CreateIcon />}>
               Start
-            </Button></a></TableCell>
+            </Button></TableCell>
               </TableRow>
           )
       })
     }
     </TableBody>
   </Table>
+{isShown && (
+    <div>
+      <h2>Download Hallticket</h2>
+    </div>
+  )}
+  {isShown && <Pdf data={data}/>}
     </div>
   )
 }
